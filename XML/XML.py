@@ -3,7 +3,7 @@ XML.py
 Mateusz Dubaniowski
 Vincent Steil
 """
-
+import sys
 
 def XML_parseline(reader, value_indent_array, indent):
     """
@@ -23,15 +23,18 @@ def XML_parseline(reader, value_indent_array, indent):
             value_indent_array.append([line[i], indent[0]])       #opening tag
             indent[0] += 1
         else:
-            indent[0] -= 1                                       #closing bracket
-    if(indent[0] == 0):                                          #check if you've reached the closing root tag
+            indent[0] -= 1                                          #closing bracket
+    if(indent[0] == 1):                                          #check if you've reached the closing root tag
         return False
     else:
         return True
+    
 
 def XML_find_occurrences(occurrence_array, doc_array, search_array):
     i = 0
     while(i<len(doc_array)):
+        sys.stdout.write("find occurences work\n")
+        sys.stdout.write(str(i))
         occurrence = True
         indent = 0
         children = 0
@@ -70,14 +73,13 @@ def XML_parser(reader, writer):
         continue
     while(XML_parseline(reader, search_array, indent)):                 #parse the entire xml doc given as search parameter
         continue
-    while(XML_find_occurrences(occurrence_array, doc_array, search_array)):
-        continue
+    XML_find_occurrences(occurrence_array, doc_array, search_array)
 
     writer.write(str(len(occurrence_array)) + "\n")
     for i in xrange(0, len(occurrence_array)):
         writer.write(str(occurrence_array[i]) + "\n")
     
     
-      
+XML_parser(sys.stdin, sys.stdout)      
     
             

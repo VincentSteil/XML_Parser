@@ -10,7 +10,7 @@
 import StringIO
 import unittest
 
-from TestXML import XML_parseline
+from XML import XML_parseline
 
 # -----------
 # TestXML

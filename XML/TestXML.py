@@ -22,40 +22,40 @@ class TestXML (unittest.TestCase) :
     # ----
 
     def test_read (self) :
-        r = StringIO.StringIO("<one>\n")
+        r = '<one>\n'
         a = [0]
         aa = []
         b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  1)
-        self.assert_(aa[0] ==  ["one"])
+        self.assert_(aa ==  [['one', 0]])
 
     def test_read1 (self) :
-        r = StringIO.StringIO("<one><two>\n")
+        r = "<one><two>\n"
         a = [0]
         aa = []
         b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  2)
-        self.assert_(aa[0] ==  ["one", "two"])
+        self.assert_(aa ==  [["one", 0], ["two", 1]])
         
     def test_read2 (self) :
-        r = StringIO.StringIO("<one><bum></bum>\n")
+        r = "<one><bum></bum>\n"
         a = [0]
         aa = []
         b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  1)
-        self.assert_(aa[0] ==  ["one", "bum"])
+        self.assert_(aa ==  [["one", 0], ["bum", 1]])
 
     def test_read3 (self) :
-        r = StringIO.StringIO("</one></woops>\n")
+        r = "</one></woops>\n"
         a = [0]
         aa = []
         b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  -2)
-        self.assert_(aa[0] ==  [])
+        self.assert_(len(aa) ==  0)
 
 """
     # ----

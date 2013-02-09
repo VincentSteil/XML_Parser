@@ -3,9 +3,9 @@ XML.py
 Mateusz Dubaniowski
 Vincent Steil
 """
-import sys
 
-def XML_parseline(value_indent_array, indent):
+
+def XML_parseline(reader, value_indent_array, indent):
     """
     value_index_array is the list of 2 element lists of tag, indent with the index being it's occurrence
     value_index_array[n] element 1 == tag
@@ -13,7 +13,7 @@ def XML_parseline(value_indent_array, indent):
     index is a list with one element! Used in order to pass a pointer, not a copy
     indent is also a list with one element!
     """
-    line = sys.stdin.readline()
+    line = reader.readline()
     line = line.lstrip();
     line = line.lstrip('<')
     line = line.rstrip('>\n')
@@ -55,7 +55,7 @@ def XML_find_occurrences(occurrence_array, doc_array, search_array):
                         
 
    
-def XML_parser():
+def XML_parser(reader, writer):
     """
     parses the given xml doc line by line into doc_array
     then parses the xml search parameter into search_array
@@ -66,12 +66,18 @@ def XML_parser():
     indent = [1]
     occurrence_array = []
     
-    while(XML_parseline(doc_array, indent)):                    #parse the entire xml document
+    while(XML_parseline(reader, doc_array, indent)):                    #parse the entire xml document
         continue
-    while(XML_parseline(search_array, indent)):                 #parse the entire xml doc given as search parameter
+    while(XML_parseline(reader, search_array, indent)):                 #parse the entire xml doc given as search parameter
         continue
     while(XML_find_occurrences(occurrence_array, doc_array, search_array)):
         continue
-       
+
+    writer.write(str(len(occurrence_array)) + "\n")
+    for i in xrange(0, len(occurrence_array)):
+        writer.write(str(occurrence_array[i]) + "\n")
+    
+    
+      
     
             

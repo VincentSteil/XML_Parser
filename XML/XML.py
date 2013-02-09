@@ -16,7 +16,7 @@ def XML_parseline(value_indent_array, indent):
     line = sys.stdin.readline()
     line = line.lstrip();
     line = line.lstrip('<')
-    line = line.rstrip('>')
+    line = line.rstrip('>\n')
     line = line.split('><')                                     #line is now a list of strings
     for i in xrange(0, len(line)):                  
         if(line[i].find('/') == -1):                            #dereference the string in line to check for opening tag
@@ -29,7 +29,7 @@ def XML_parseline(value_indent_array, indent):
     else:
         return True
 
-def XML_find_occurrence(occurrence_array, doc_array, search_array):
+def XML_find_occurrences(occurrence_array, doc_array, search_array):
     i = 0
     while(i<len(doc_array)):
         occurrence = True
@@ -70,7 +70,7 @@ def XML_parser():
         continue
     while(XML_parseline(search_array, indent)):                 #parse the entire xml doc given as search parameter
         continue
-    while(XML_find_occurrence(occurrence_array, doc_array, search_array)):
+    while(XML_find_occurrences(occurrence_array, doc_array, search_array)):
         continue
        
     

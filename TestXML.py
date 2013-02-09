@@ -10,7 +10,7 @@
 import StringIO
 import unittest
 
-from TestXML import XML_parseline
+from XML import XML_parseline
 
 # -----------
 # TestXML
@@ -22,34 +22,42 @@ class TestXML (unittest.TestCase) :
     # ----
 
     def test_read (self) :
-        r = StringIO.StringIO("<one>")
+        r = StringIO.StringIO("<one>\n")
         a = [0]
-        b = XML_parseline(r, a)
+        aa = []
+        b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  1)
+        self.assert_(aa[0] ==  ["one"])
 
     def test_read1 (self) :
-        r = StringIO.StringIO("<one><two>")
+        r = StringIO.StringIO("<one><two>\n")
         a = [0]
-        b = XML_parseline(r, a)
+        aa = []
+        b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  2)
+        self.assert_(aa[0] ==  ["one", "two"])
         
     def test_read2 (self) :
-        r = StringIO.StringIO("<one><bum></bum>")
+        r = StringIO.StringIO("<one><bum></bum>\n")
         a = [0]
-        b = XML_parseline(r, a)
+        aa = []
+        b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  1)
+        self.assert_(aa[0] ==  ["one", "bum"])
 
     def test_read3 (self) :
-        r = StringIO.StringIO("</one></woops>")
+        r = StringIO.StringIO("</one></woops>\n")
         a = [0]
-        b = XML_parseline(r, a)
+        aa = []
+        b = XML_parseline(r, aa, a)
         self.assert_(b    == True)
         self.assert_(a[0] ==  -2)
+        self.assert_(aa[0] ==  [])
 
-
+"""
     # ----
     # eval
     # ----
@@ -137,7 +145,7 @@ class TestXML (unittest.TestCase) :
 # ----
 # main
 # ----
-
-print "TestCollatz.py"
+    """
+print "TestXML.py"
 unittest.main()
 print "Done."

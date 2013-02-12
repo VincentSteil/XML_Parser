@@ -28,6 +28,7 @@ def XML_parseline(reader, value_indent_array, indent):
         return False
     else:
         return True
+    
 
 def XML_find_occurrences(doc_array, search_array):
     i = 0

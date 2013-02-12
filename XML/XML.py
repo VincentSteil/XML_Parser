@@ -29,11 +29,12 @@ def XML_parseline(reader, value_indent_array, indent):
     else:
         return True
 
-def XML_find_occurrences(occurrence_array, doc_array, search_array):
+def XML_find_occurrences(doc_array, search_array):
     i = 0
+    """
     while(i<len(doc_array)):
         sys.stdout.write("find occurences work\n")
-        sys.stdout.write(str(i))
+        sys.stdout.write(str(i) +" ")
         occurrence = True
         indent = 0
         children = 0
@@ -52,9 +53,35 @@ def XML_find_occurrences(occurrence_array, doc_array, search_array):
                     break
         if(occurrence == True):
             occurrence_array.append(i -children) 
-               
+    """
+    da=[]
+    sa=search_array
+    temp=0    
+    res=[]
+    indent_keep=0
+    tt=0
 
-                        
+    for x in range(0, len(doc_array)):
+        if(temp==len(search_array)):
+            res.append(tt)
+            indent_keep=0
+            tt=0
+            temp=0
+        if(indent_keep>=doc_array[x][1]):
+            indent_keep=0
+            tt=0
+            temp=0
+        if(doc_array[x][0]==search_array[temp][0] and indent_keep<doc_array[x][1]):
+            indent_keep=doc_array[x][1]
+            if(temp==0):
+                tt=x+1
+            temp+=1
+    if(temp==len(search_array)):
+            res.append(tt)
+
+    return res
+    #occurence_array=res
+    
 
    
 def XML_parser(reader, writer):
@@ -66,17 +93,20 @@ def XML_parser(reader, writer):
     doc_array = []
     search_array = []
     indent = [1]
-    occurrence_array = []
+    res = []
     
     while(XML_parseline(reader, doc_array, indent)):                    #parse the entire xml document
         continue
     while(XML_parseline(reader, search_array, indent)):                 #parse the entire xml doc given as search parameter
         continue
-    XML_find_occurrences(occurrence_array, doc_array, search_array)
+    #print(search_array.remove(doc_array[0]))
+    res=XML_find_occurrences( doc_array, search_array)
 
-    writer.write(str(len(occurrence_array)) + "\n")
-    for i in xrange(0, len(occurrence_array)):
-        writer.write(str(occurrence_array[i]) + "\n")
+    
+    
+    writer.write(str(len(res)) + "\n")
+    for i in xrange(0, len(res)):
+        writer.write(str(res[i]) + "\n")
     
     
 XML_parser(sys.stdin, sys.stdout)      

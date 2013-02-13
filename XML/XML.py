@@ -55,7 +55,6 @@ def XML_find_occurrences(doc_array, search_array):
     """
     assert len(doc_array) > 0
     assert len(search_array) > 0
-    i = 0
     temp=0    #keeps track of how far the subtree and search_array are equal
     res=[]    #stores the results
     indent_keep=0   #indent of last element in the subtree

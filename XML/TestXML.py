@@ -11,7 +11,7 @@ import StringIO
 import unittest
 
 from XML import XML_parseline
-from XML import XML_find_occurrences
+from XML import XML_find_occurrences, XML_parser
 
 # -----------
 # TestXML
@@ -60,7 +60,7 @@ class TestXML (unittest.TestCase) :
 
 
     # ----
-    # XML_find_occurences
+    # XML_find_occurrences
     # ----
 
     def test_eval_1 (self) :
@@ -90,6 +90,34 @@ class TestXML (unittest.TestCase) :
     def test_eval_7 (self) :
         v = XML_find_occurrences([['one', 1], ['b', 2], ['c', 3]], [['one', 1], ['c', 2]])
         self.assert_(v == [])
+
+    # ----
+    # XML_parser
+    # ----
+
+    def test_parser_1 (self) :
+        r = StringIO.StringIO('<one>\n<two>\n<three>\n</three>\n<four></four>\n</two>\n</one>\n<one><two><four></four></two></one>\n')
+        w = StringIO.StringIO()
+        XML_parser(r, w)
+        self.assert_(w.getvalue() == '1\n1\n')
+
+    def test_parser_2 (self) :
+        r = StringIO.StringIO('<THU>\n<Team>\n<ACRush>\n</ACRush>\n<Jelly></Jelly>\n<Cooly></Cooly>\n</Team>\n<JiaJia><Team><Ahyangyi></Ahyangyi>\n<Dragon></Dragon>\n<Cooly><Amber></Amber></Cooly>\n</Team></JiaJia>\n</one>\n<Team><Cooly></Cooly></Team>\n')
+        w = StringIO.StringIO()
+        XML_parser(r, w)
+        self.assert_(w.getvalue() == '2\n2\n7\n')
+
+    def test_parser_3 (self) :
+        r = StringIO.StringIO('<a><b></b><c><y><x></x></y><z></z></c><d></d><e><ee><c><y><x></x></y><z></z></c></ee></e><w><c><y></y><z></z></c></w></a>\n<c><y><x></x></y><z></z></c>\n')
+        w = StringIO.StringIO()
+        XML_parser(r, w)
+        self.assert_(w.getvalue() == '2\n3\n10\n')
+
+    def test_parser_4 (self) :
+        r = StringIO.StringIO('<t1><t2></t2><t3><t4></t4><t5></t5></t3><tt></tt></t1>\n<tt><t></t></tt>\n')
+        w = StringIO.StringIO()
+        XML_parser(r, w)
+        self.assert_(w.getvalue() == '0\n')
 
 # ----
 # main

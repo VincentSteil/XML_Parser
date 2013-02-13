@@ -1,7 +1,7 @@
 # --------------------------
 # XML.py
-# Mateusz Dubaniowski
-# Vincent Steil
+# Mateusz Dubaniowski, mid325
+# Vincent Steil, vjs432
 # --------------------------
 
 # --------------

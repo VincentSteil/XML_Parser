@@ -51,29 +51,6 @@ def XML_find_occurrences(doc_array, search_array):
     search_array is a list 2-element lists containing pattern's tags and their indents
     return list of indices where the pattern(search_array) searched for occurs in the document(doc_array)
     """
-    """
-    while(i<len(doc_array)):
-        sys.stdout.write("find occurences work\n")
-        sys.stdout.write(str(i) +" ")
-        occurrence = True
-        indent = 0
-        children = 0
-        for j in xrange(0, len(search_array)):
-            if(occurrence == False):
-                break
-            for k in xrange(i, len(doc_array)):
-                children += 1
-                if(search_array[j][0] == doc_array[k][0]):
-                    indent = doc_array[k][1]
-                    i = k + 1
-                    break
-                elif(doc_array[k][1] == indent):
-                    occurrence = False
-                    i = k 
-                    break
-        if(occurrence == True):
-            occurrence_array.append(i -children) 
-    """
     i = 0
     temp=0    #keeps track of how far the subtree and search_array are equal
     res=[]    #stores the results

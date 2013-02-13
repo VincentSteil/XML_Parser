@@ -56,20 +56,24 @@ def XML_find_occurrences(doc_array, search_array):
     res=[]    #stores the results
     indent_keep=0   #indent of last element in the subtree
     tt=0      #the beginning point of current subtree
-
+    last_indent=0
+    
     for x in range(0, len(doc_array)):
         if(temp==len(search_array)):            #add another occurence and reset if the current subtree is same as search_array
             res.append(tt)
             indent_keep=0
             tt=0
-            temp=0
-        if(indent_keep>doc_array[x][1] or (indent_keep>=doc_array[x][1] and search_array[temp][1]<search_array[temp-1][1])): #if subtree finished but not the same as search_array or wrong sibling present then reset
+            last_indent=0
+            temp=0                      #or (indent_keep>=doc_array[x][1] and search_array[temp][1]<search_array[temp-1][1])
+        if(indent_keep>=doc_array[x][1]): #if subtree finished but not the same as search_array or wrong sibling present then reset
             indent_keep=0
             tt=0
             temp=0
-        if(doc_array[x][0]==search_array[temp][0] and (indent_keep<doc_array[x][1] or (indent_keep==doc_array[x][1] and search_array[temp][1]==search_array[temp-1][1]))): #subtree started or expanded if it is consistent with search_array
-            indent_keep=doc_array[x][1]
+            last_indent=0
+        if(doc_array[x][0]==search_array[temp][0] and indent_keep<doc_array[x][1] and(indent_keep==0 or last_indent>=doc_array[x][1]-1)): #subtree started or expanded if it is consistent with search_array
+            last_indent=doc_array[x][1]
             if(temp==0):
+                indent_keep=doc_array[x][1]
                 tt=x+1
             temp+=1
     if(temp==len(search_array)): #result appended in case last iteration completes the subtree to search_array

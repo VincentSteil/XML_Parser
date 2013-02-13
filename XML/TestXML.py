@@ -1,9 +1,9 @@
-#-------------------
-#TestXML.py
-#Lab 2
-#Mateusz Dubaniowski
-#Vincent Steil
-#-------------------
+# -------------------
+# TestXML.py
+# Lab 2
+# Mateusz Dubaniowski
+# Vincent Steil
+# -------------------
 
 # imports
 

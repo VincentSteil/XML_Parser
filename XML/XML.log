@@ -1,0 +1,235 @@
+commit 773efdd655f88c068426fa65f0701bd99b6bf99e
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Wed Feb 13 12:34:47 2013 -0600
+
+    added pydoc for XML.py
+
+commit 2ad1af25cfdc482fafa1059b7dfff53871201d7f
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Wed Feb 13 12:34:10 2013 -0600
+
+    added eid's
+
+commit 21c7286ee720c78cb95c162daa5acc6f9068cfdd
+Merge: be868a6 b85f0c1
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Wed Feb 13 12:26:32 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit be868a6d245e3112fb32d4ee31f56e0bb0e0a974
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Wed Feb 13 12:26:22 2013 -0600
+
+    acceptance tests done
+
+commit b85f0c15f4e3b601a7f520ab3e253abd47b732ba
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 12:24:34 2013 -0600
+
+    Addded unit tests for XML_parser
+
+commit 688675015db3a4cc4dd357ce828cef4d996d8155
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 10:50:17 2013 -0600
+
+    Added 2 more acceptance tests
+
+commit 360dc03fd385e1fda40e3e85b963e7f1e3afb6ad
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 10:42:24 2013 -0600
+
+    Acceptance test no. 1 added
+
+commit 2dbec2a14824264f92a7115483f58a77baa89930
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 10:34:40 2013 -0600
+
+    makefile added and commenting in TestXML.py improved
+
+commit da570b9a94d8760e94d2b5dba4996e63da9f727c
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 10:33:24 2013 -0600
+
+    RunXML.py added
+
+commit d68f64daf51ab8ae99ee492b5eedb8f594189c3a
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 10:19:02 2013 -0600
+
+    Began writing acceptance tests
+
+commit dadeea7e1bc08c130226b6923da034373c160cdf
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 10:02:26 2013 -0600
+
+    Output of unit tests added - TestXML.out
+
+commit 79635480bd8ae6e077ae121cd984a1c0ae134a40
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 09:54:31 2013 -0600
+
+    Created unit tests for XML_find_occurences. Unit tests are done.
+
+commit cb20ada053c8523241a4ae2bcdbbba65a98e023d
+Author: unknown <Iwo@.(none)>
+Date:   Wed Feb 13 00:21:37 2013 -0600
+
+    Solves the issue about only direct children being taken care of
+
+commit bf5a12923be3eb963a0e1ce945329343a5d769cb
+Author: unknown <Iwo@.(none)>
+Date:   Tue Feb 12 17:00:04 2013 -0600
+
+    Added comments, labels and generally made the code look neater. Created SphereXML.py
+
+commit 515a31ab7385c503733c4a7262ab0179a2c08ca5
+Author: unknown <Iwo@.(none)>
+Date:   Tue Feb 12 15:56:47 2013 -0600
+
+    Solved the issue with search for siblings in a parent
+
+commit 44e4ff952641697954e9070eaf17a1d666fdc7e5
+Author: unknown <Iwo@.(none)>
+Date:   Tue Feb 12 01:17:37 2013 -0600
+
+    Corrected the tests so that they work with new indent value of 1
+
+commit 7bc140139ba8f7e075aa68a6ac46501b1dedd5cf
+Merge: e162673 5ac7e73
+Author: unknown <Iwo@.(none)>
+Date:   Tue Feb 12 00:40:27 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit e16267386da9ecc8cfcebe65c273cf9c7a73e0de
+Author: unknown <Iwo@.(none)>
+Date:   Tue Feb 12 00:39:39 2013 -0600
+
+    The XML.py works, I tried different method with only one for loop. Too slow for sphere tho.
+
+commit 5ac7e73f6017c96f1c1ad9e3ccf0cf5a68147f37
+Merge: 6ffb480 75b2263
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 21:59:38 2013 -0600
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6ffb480a018329d2ecda2f45d00289f07748fe58
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 21:55:59 2013 -0600
+
+    Minor changes
+
+commit 75b226358bc37805bc69b0d4c84b33bd6f73597c
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 21:33:31 2013 -0600
+
+    Tests for parseline updated and debugging of find occurences
+
+commit 2d01edc681abe8e1c6563595596054001ba19f62
+Merge: 7534713 ce9d44d
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 21:12:59 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit ce9d44dc0da01cb0ee1f9dd38addb4566641b09d
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 21:12:04 2013 -0600
+
+    redone I/O
+
+commit 753471398951b561e222979e9b34c84993fe0dde
+Merge: 18c0bb4 677ab70
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 21:10:11 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit 18c0bb4813e1c94efb36518919f899de23a406fb
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 21:10:06 2013 -0600
+
+    Tests working for XML_parseline
+
+commit 677ab70a8f2c893f6673dadab6610cc1a8bc94e0
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 21:07:01 2013 -0600
+
+    Tests working for XML_parseline
+
+commit 98090f36d08b6882b8cd8d961380eae99a64387d
+Merge: 57eb20c e0891c5
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 20:51:34 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit 57eb20c08d61a71a5cd629d8a2323887b0747a40
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 20:51:22 2013 -0600
+
+    Tests for XML
+
+commit e0891c5416011a8abb7e08c63acb6d1fee12d9ba
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 20:46:28 2013 -0600
+
+    resolved error due to package
+
+commit addde727cbd30c5d5aeac6cc52e26a7ec67e456a
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 20:40:06 2013 -0600
+
+    Minor changes
+
+commit 11f796b30e525340d2e74dc300495af97ee6c482
+Merge: 886cd14 5e5faf9
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 20:37:04 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit 886cd146cd9b59ac11c0af030562f204e60a637a
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 20:36:25 2013 -0600
+
+    XML_find_occurrances should work now
+
+commit 5e5faf900f67c8bea8da9c25e4d96f028953bbee
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 19:11:07 2013 -0600
+
+    Unit tests for XML_parseline
+
+commit b4295d53eb7e7e7304f8eb33e65b4fc5ee6d3d95
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 19:00:05 2013 -0600
+
+    Doc and Search parsers up and running
+
+commit 89fd337af0611a79fb20480d2c97484a67515c27
+Merge: e5a12d3 e6f838a
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 17:34:42 2013 -0600
+
+    Merge branch 'master' of https://github.com/VincentSteil/cs327e-xml.git
+
+commit e5a12d3490fd30cab81eaf4dac8937f1630ce0cd
+Author: unknown <Iwo@.(none)>
+Date:   Fri Feb 8 17:33:29 2013 -0600
+
+    First commit
+
+commit e6f838aa880f8e4c5b95094fd0b6b25f966b00fa
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Fri Feb 8 17:07:58 2013 -0600
+
+    Initial Commit
+
+commit 1da1ec21797d809830d35e8d13135a77875b4ac3
+Author: VincentSteil <vincent.steil@utexas.edu>
+Date:   Mon Feb 4 10:47:16 2013 -0800
+
+    Initial commit

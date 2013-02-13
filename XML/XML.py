@@ -35,9 +35,11 @@ def XML_parseline(reader, value_indent_array, indent):
             indent[0] += 1
         else:
             indent[0] -= 1                                          #closing bracket
-    if(indent[0] == 1):                                          #check if you've reached the closing root tag
+    if(indent[0] == 1): 
+        assert indent[0] == 1                                        #check if you've reached the closing root tag
         return False
     else:
+        assert indent[0] != 1
         return True
 
 # ---------------------
@@ -51,6 +53,8 @@ def XML_find_occurrences(doc_array, search_array):
     search_array is a list 2-element lists containing pattern's tags and their indents
     return list of indices where the pattern(search_array) searched for occurs in the document(doc_array)
     """
+    assert len(doc_array) > 0
+    assert len(search_array) > 0
     i = 0
     temp=0    #keeps track of how far the subtree and search_array are equal
     res=[]    #stores the results
